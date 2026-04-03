@@ -1,0 +1,15 @@
+name: warehouse-fulfillment
+version: 1.0
+tasks:
+  - name: single_pick
+    difficulty: easy
+    grader: "env.score() if hasattr(env, 'score') else 0.0"
+    max_steps: 50
+  - name: multi_order  
+    difficulty: medium
+    grader: "env.score()"
+    max_steps: 100
+  - name: efficiency_challenge
+    difficulty: hard
+    grader: "env.score()"
+    max_steps: 200
