@@ -1,7 +1,6 @@
-# openenv.yaml - Root of repo
 name: warehouse-fulfillment
 version: 1.0.0
-description: "Real-world warehouse robot order fulfillment"
+description: "Warehouse robot order fulfillment - 3 tasks E→H"
 action_space:
   type: discrete
   size: 6
@@ -12,7 +11,7 @@ observation_space:
     - name: grid
       shape: [15, 15]
       dtype: uint8
-    - name: robot_pos  
+    - name: robot_pos
       shape: [2]
       dtype: int32
     - name: inventory
@@ -22,19 +21,13 @@ tasks:
   - name: single_pick
     difficulty: easy
     max_steps: 50
-    grader: |
-      env.score()  # Returns 0.0-1.0
   - name: multi_order
-    difficulty: medium  
+    difficulty: medium
     max_steps: 100
-    grader: |
-      env.score()
   - name: efficiency_challenge
     difficulty: hard
     max_steps: 200
-    grader: |
-      env.score()
 endpoints:
   state: /state
-  reset: /reset  
+  reset: /reset
   step: /step
